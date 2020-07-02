@@ -101,13 +101,10 @@ function viewEmployeesByDepartment() {
     });
 };
 
-//
-//
-//  DO THIS
+
+//  
 //
 function returnEmployeesByDepartment(department){};
-
-// 
 // 
 //
 
@@ -116,7 +113,12 @@ function viewEmployeesByManager() {
     .prompt({
       name: "manager",
       type: "rawlist",
-      message: "View employees of which manager?"
+      message: "View employees of which manager?",
+      choices: [
+        "SCOTT",
+        "PORTER",
+        "CALIFORNIA"
+      ]
     })
     .then(function(answer) {
       var manager = answer.action
@@ -139,66 +141,101 @@ function viewEmployeesByManager() {
 //
 //
 function returnEmployeesByManager(manager){}
-// ADD THIS
+// 
 //
 
 
 function addEmployee() {
   inquirer
-    .prompt({
-      name: "name",
+    .prompt([
+      {
+      name: "first",
       type: "input",
-      message: "quesiton to user?"
-    })
+      message: "What is the employee's first name?"
+    },
+    {
+      name: "last",
+      type: "input",
+      message: "What is the employee's last name?"
+    },
+    {
+      name: "department",
+      type: "list",
+      message: "What is the employee's department?"
+      choices:      // add departments here
+
+    },
+    {
+      name: "role",
+      type: "list",
+      message: "What is the employee's role?"
+      choices:// add roles here
+
+    }
+  ])
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
     });
 };
 
 function removeEmployee() {
+
   inquirer
     .prompt({
-      name: "name",
-      type: "input",
-      message: "quesiton to user?"
+      name: "selectEmployee",
+      type: "list",
+      message: "Which employee would you like to update?"
+      choices: // list of employees
+
     })
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
     });
+
 };
 
 function updateEmployeeRole() {
   inquirer
     .prompt({
-      name: "name",
-      type: "input",
-      message: "quesiton to user?"
+      name: "selectEmployee",
+      type: "list",
+      message: "Which employee would you like to update?"
+      choices: // list of employees
+
     })
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
+    });
+
+  inquirer
+    .prompt({
+      name: "updateRole",
+      type: "list",
+      message: "Select a role to update to the employee"
+      choices: // list of roles
+
+    })
+    .then(function(answer) {
     });
 };
 
 function updateEmployeeManager() {
   inquirer
+  .prompt({
+    name: "selectEmployee",
+    type: "list",
+    message: "Which employee would you like to update?"
+    choices: // list of employees
+
+  })
+  .then(function(answer) {
+  });
+
+  inquirer
     .prompt({
-      name: "name",
-      type: "input",
-      message: "quesiton to user?"
+      name: "updateManager",
+      type: "list",
+      message: "Select a manager to update to the employee"
+      choices: // list of employees
+      
     })
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
     });
 };
