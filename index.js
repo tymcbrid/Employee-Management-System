@@ -17,7 +17,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
   if (err) throw err;
-  runSearch();
+  mainMenu();
 });
 
 function mainMenu() {
@@ -27,33 +27,43 @@ function mainMenu() {
       type: "rawlist",
       message: "What would you like to do?",
       choices: [
-        "Find songs by artist",
-        "Find all artists who appear more than once",
-        "Find data within a specific range",
-        "Search for a specific song",
-        "Find artists with a top song and top album in the same year"
+        "View All Employees",
+        "View All Employees By Department",
+        "View All Employees By Manager",
+        "Add Employee",
+        "Remove Employee",
+        "Update Employee Role",
+        "Update Employee Manager"
       ]
     })
     .then(function(answer) {
       switch (answer.action) {
-      case "Find songs by artist":
-        artistSearch();
+      case "View All Employees":
+        viewAllEmployees();
         break;
 
-      case "Find all artists who appear more than once":
-        multiSearch();
+      case "View All Employees By Department":
+        viewEmployeesByDepartment();
         break;
 
-      case "Find data within a specific range":
-        rangeSearch();
+      case "View All Employees By Manager":
+        viewEmployeesByManager();
         break;
 
-      case "Search for a specific song":
-        songSearch();
+      case "Add Employee":
+        addEmployee();
         break;
 
-      case "Find artists with a top song and top album in the same year":
-        songAndAlbumSearch();
+      case "Remove Employee":
+        removeEmployee();
+        break;
+
+      case "Update Employee Role":
+        updateEmployeeRole();
+        break;
+      
+      case "Update Employee Manager":
+        updateEmployeeManager();
         break;
       }
     });
