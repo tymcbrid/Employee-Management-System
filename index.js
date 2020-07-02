@@ -68,3 +68,108 @@ function mainMenu() {
       }
     });
 }
+
+function viewAllEmployees() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function viewEmployeesByDepartment() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function viewEmployeesByManager() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function addEmployee() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function removeEmployee() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function updateEmployeeRole() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
+
+function updateEmployeeManager() {
+  inquirer
+    .prompt({
+      name: "name",
+      type: "input",
+      message: "quesiton to user?"
+    })
+    .then(function(answer) {
+      var query = "SELECT x, y, z FROM table WHERE ?";
+      connection.query(query, function(err, res) {
+        mainMenu();
+      });
+    });
+}
