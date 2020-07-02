@@ -161,16 +161,22 @@ function addEmployee() {
     {
       name: "department",
       type: "list",
-      message: "What is the employee's department?"
-      choices:      // add departments here
-
+      message: "What is the employee's department?",
+      choices: [
+        "SALES",
+        "ACCOUNTING",
+        "PARTYPLANNING"
+      ]
     },
     {
       name: "role",
       type: "list",
-      message: "What is the employee's role?"
-      choices:// add roles here
-
+      message: "What is the employee's role?",
+      choices: [
+        "SALESPERSON",
+        "ACCOUNTANT",
+        "PARTYPLANNER"
+      ]
     }
   ])
     .then(function(answer) {
@@ -208,8 +214,12 @@ function updateEmployeeRole() {
     .prompt({
       name: "updateRole",
       type: "list",
-      message: "Select a role to update to the employee"
-      choices: // list of roles
+      message: "Select a role to update to the employee",
+      choices: [
+        "SALESPERSON",
+        "ACCOUNTANT",
+        "PARTYPLANNER"
+      ]
 
     })
     .then(function(answer) {
@@ -232,9 +242,12 @@ function updateEmployeeManager() {
     .prompt({
       name: "updateManager",
       type: "list",
-      message: "Select a manager to update to the employee"
-      choices: // list of employees
-      
+      message: "Select a manager to update to the employee",
+      choices: [
+        "SCOTT",
+        "PORTER",
+        "CALIFORNIA"
+      ]
     })
     .then(function(answer) {
     });
