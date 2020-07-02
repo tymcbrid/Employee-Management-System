@@ -69,41 +69,53 @@ function mainMenu() {
     });
 }
 
-function viewAllEmployees() {
-  inquirer
-    .prompt({
-      name: "name",
-      type: "input",
-      message: "quesiton to user?"
-    })
-    .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
-    });
-}
+function viewAllEmployees() {};
 
 function viewEmployeesByDepartment() {
   inquirer
     .prompt({
-      name: "name",
-      type: "input",
-      message: "quesiton to user?"
+      name: "department",
+      type: "rawlist",
+      message: "Which department would you like to choose?",
+      choices: [
+        "SALES",
+        "ACCOUNTING",
+        "PARTYPLANNING"
+      ]
     })
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
+      switch (answer.action) {
+        case "SALES":
+          viewSalesEmployees();
+          break;
+  
+        case "ACCOUNTING":
+          viewAccountingEmployees();
+          break;
+        
+        case "PARTYPLANNING":
+          viewPartyPlanningEmployees();
+          break;
+        }
     });
-}
+};
+
+//
+//
+//  DO THESE FUNCTIONS
+//
+function viewSalesEmployees(){};
+function viewAccountingEmployees(){};
+function viewPartyPlanningEmployees(){};
+// 
+// 
+//
 
 function viewEmployeesByManager() {
   inquirer
     .prompt({
-      name: "name",
-      type: "input",
+      name: "manager",
+      type: "rawlist",
       message: "quesiton to user?"
     })
     .then(function(answer) {
@@ -112,7 +124,7 @@ function viewEmployeesByManager() {
         mainMenu();
       });
     });
-}
+};
 
 function addEmployee() {
   inquirer
@@ -127,7 +139,7 @@ function addEmployee() {
         mainMenu();
       });
     });
-}
+};
 
 function removeEmployee() {
   inquirer
@@ -142,7 +154,7 @@ function removeEmployee() {
         mainMenu();
       });
     });
-}
+};
 
 function updateEmployeeRole() {
   inquirer
@@ -157,7 +169,7 @@ function updateEmployeeRole() {
         mainMenu();
       });
     });
-}
+};
 
 function updateEmployeeManager() {
   inquirer
@@ -172,4 +184,4 @@ function updateEmployeeManager() {
         mainMenu();
       });
     });
-}
+};
