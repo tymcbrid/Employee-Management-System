@@ -76,7 +76,7 @@ function viewEmployeesByDepartment() {
     .prompt({
       name: "department",
       type: "rawlist",
-      message: "Which department would you like to choose?",
+      message: "View employees of which department?",
       choices: [
         "SALES",
         "ACCOUNTING",
@@ -84,17 +84,18 @@ function viewEmployeesByDepartment() {
       ]
     })
     .then(function(answer) {
-      switch (answer.action) {
+      var department = answer.action
+      switch (adepartment) {
         case "SALES":
-          viewSalesEmployees();
+          returnEmployeesByDepartment(department);
           break;
   
         case "ACCOUNTING":
-          viewAccountingEmployees();
+          returnEmployeesByDepartment(department);
           break;
         
         case "PARTYPLANNING":
-          viewPartyPlanningEmployees();
+          returnEmployeesByDepartment(department);
           break;
         }
     });
@@ -102,11 +103,10 @@ function viewEmployeesByDepartment() {
 
 //
 //
-//  DO THESE FUNCTIONS
+//  DO THIS
 //
-function viewSalesEmployees(){};
-function viewAccountingEmployees(){};
-function viewPartyPlanningEmployees(){};
+function returnEmployeesByDepartment(department){};
+
 // 
 // 
 //
@@ -116,15 +116,32 @@ function viewEmployeesByManager() {
     .prompt({
       name: "manager",
       type: "rawlist",
-      message: "quesiton to user?"
+      message: "View employees of which manager?"
     })
     .then(function(answer) {
-      var query = "SELECT x, y, z FROM table WHERE ?";
-      connection.query(query, function(err, res) {
-        mainMenu();
-      });
+      var manager = answer.action
+      switch (manager) {
+        case "SCOTT":
+          returnEmployeesByManager(manager);
+          break;
+  
+        case "PORTER":
+          returnEmployeesByManager(manager);
+          break;
+        
+        case "CALIFORNIA":
+          returnEmployeesByManager(manager);
+          break;
+        }
     });
 };
+
+//
+//
+function returnEmployeesByManager(manager){}
+// ADD THIS
+//
+
 
 function addEmployee() {
   inquirer
