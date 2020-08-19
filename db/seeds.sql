@@ -6,23 +6,13 @@ INSERT department (`name`) VALUES ('ACCOUNTING');
 INSERT department (`name`) VALUES ('PARTYPLANNING');
 
 
--- SELECT * FROM department;
-
--- TRUNCATE TABLE `role`;
 
 INSERT `role` (title, salary, department_id) VALUES ('MANAGER',100000,1);
 INSERT `role` (title, salary, department_id) VALUES ('SALESPERSON',55000,1);
 INSERT `role` (title, salary, department_id) VALUES ('ACCOUNTANT',70000,2);
 INSERT `role` (title, salary, department_id) VALUES ('PARTYPLANNER',300000,3);
 
--- INSERT INTO role (title, salary, department_id) VALUES ("MANAGER", 10000000, 1);
--- INSERT INTO role (title, salary, department_id) VALUES ("SALESPERSON", 5500000, 1);
--- INSERT INTO role (title, salary, department_id) VALUES ("ACCOUNTANT", 70000, 2);
--- INSERT INTO role (title, salary, department_id) VALUES ("PARTYPLANNER", 300000, 3);
 
--- select * from `role`;
-
--- TRUNCATE TABLE employee;
 
 INSERT employee (first_name, last_name, role_id, manager_id) VALUES ('Michael','Scott',1, NULL);
 INSERT employee (first_name, last_name, role_id, manager_id) VALUES ('JIM','HALPERT',2, 1);
